@@ -1,0 +1,282 @@
+* {
+  font-family: "League Spartan", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 0.5s;
+}
+
+body.themeOne, body.themeThree, body.themeTwo {
+  background-color: #3b4664;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.themeOne .calculator, body.themeThree .calculator, body.themeTwo .calculator {
+  width: 25rem;
+}
+body.themeOne .calculator header, body.themeThree .calculator header, body.themeTwo .calculator header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body.themeOne .calculator header h4, body.themeThree .calculator header h4, body.themeTwo .calculator header h4 {
+  color: white;
+}
+body.themeOne .calculator header .themes, body.themeThree .calculator header .themes, body.themeTwo .calculator header .themes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body.themeOne .calculator header .themes h6, body.themeThree .calculator header .themes h6, body.themeTwo .calculator header .themes h6 {
+  color: white;
+  margin-right: 0.9375rem;
+}
+body.themeOne .calculator header .themes .toggle .numbers, body.themeThree .calculator header .themes .toggle .numbers, body.themeTwo .calculator header .themes .toggle .numbers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3125rem;
+}
+body.themeOne .calculator header .themes .toggle .numbers span, body.themeThree .calculator header .themes .toggle .numbers span, body.themeTwo .calculator header .themes .toggle .numbers span {
+  display: block;
+  color: white;
+  font-size: 0.625rem;
+}
+body.themeOne .calculator header .themes .toggle .numbers span:not(:last-child), body.themeThree .calculator header .themes .toggle .numbers span:not(:last-child), body.themeTwo .calculator header .themes .toggle .numbers span:not(:last-child) {
+  margin-right: 0.625rem;
+}
+body.themeOne .calculator header .themes .toggle .change, body.themeThree .calculator header .themes .toggle .change, body.themeTwo .calculator header .themes .toggle .change {
+  width: 100%;
+  background-color: #252c45;
+  height: 0.9375rem;
+  border-radius: 0.625rem;
+  position: relative;
+  cursor: pointer;
+}
+body.themeOne .calculator header .themes .toggle .change::before, body.themeThree .calculator header .themes .toggle .change::before, body.themeTwo .calculator header .themes .toggle .change::before {
+  content: "";
+  background-color: #fc6a5a;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  left: 0.4375rem;
+  transition: all 0.5s;
+}
+body.themeOne .calculator .screen, body.themeThree .calculator .screen, body.themeTwo .calculator .screen {
+  width: 100%;
+  margin: 1.25rem 0;
+  height: 5rem;
+}
+body.themeOne .calculator .screen textarea, body.themeThree .calculator .screen textarea, body.themeTwo .calculator .screen textarea {
+  width: inherit;
+  height: inherit;
+  resize: none;
+  border-radius: 0.3125rem;
+  background-color: #181f32;
+  border: none;
+  padding: 0 0.625rem;
+  line-height: 5rem;
+  text-align: right;
+  font-size: 3.125rem;
+  white-space: nowrap;
+  color: white;
+  caret-color: white;
+}
+body.themeOne .calculator .screen textarea:focus, body.themeThree .calculator .screen textarea:focus, body.themeTwo .calculator .screen textarea:focus {
+  outline: none;
+}
+body.themeOne .calculator .panal, body.themeThree .calculator .panal, body.themeTwo .calculator .panal {
+  width: 100%;
+  background-color: #252d44;
+  padding: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 0.3125rem;
+}
+body.themeOne .calculator .panal .num0, body.themeThree .calculator .panal .num0, body.themeTwo .calculator .panal .num0 {
+  order: 14;
+}
+body.themeOne .calculator .panal .num1, body.themeThree .calculator .panal .num1, body.themeTwo .calculator .panal .num1 {
+  order: 9;
+}
+body.themeOne .calculator .panal .num2, body.themeThree .calculator .panal .num2, body.themeTwo .calculator .panal .num2 {
+  order: 10;
+}
+body.themeOne .calculator .panal .num3, body.themeThree .calculator .panal .num3, body.themeTwo .calculator .panal .num3 {
+  order: 11;
+}
+body.themeOne .calculator .panal .num4, body.themeThree .calculator .panal .num4, body.themeTwo .calculator .panal .num4 {
+  order: 5;
+}
+body.themeOne .calculator .panal .num5, body.themeThree .calculator .panal .num5, body.themeTwo .calculator .panal .num5 {
+  order: 6;
+}
+body.themeOne .calculator .panal .num6, body.themeThree .calculator .panal .num6, body.themeTwo .calculator .panal .num6 {
+  order: 7;
+}
+body.themeOne .calculator .panal .num7, body.themeThree .calculator .panal .num7, body.themeTwo .calculator .panal .num7 {
+  order: 1;
+}
+body.themeOne .calculator .panal .num8, body.themeThree .calculator .panal .num8, body.themeTwo .calculator .panal .num8 {
+  order: 2;
+}
+body.themeOne .calculator .panal .num9, body.themeThree .calculator .panal .num9, body.themeTwo .calculator .panal .num9 {
+  order: 3;
+}
+body.themeOne .calculator .panal .del, body.themeThree .calculator .panal .del, body.themeTwo .calculator .panal .del, body.themeOne .calculator .panal .speacialopre p.rest, body.themeThree .calculator .panal .speacialopre p.rest, body.themeTwo .calculator .panal .speacialopre p.rest {
+  order: 4;
+}
+body.themeOne .calculator .panal .dot, body.themeThree .calculator .panal .dot, body.themeTwo .calculator .panal .dot {
+  order: 13;
+}
+body.themeOne .calculator .panal .operation0, body.themeThree .calculator .panal .operation0, body.themeTwo .calculator .panal .operation0 {
+  order: 8;
+}
+body.themeOne .calculator .panal .operation1, body.themeThree .calculator .panal .operation1, body.themeTwo .calculator .panal .operation1 {
+  order: 12;
+}
+body.themeOne .calculator .panal .operation2, body.themeThree .calculator .panal .operation2, body.themeTwo .calculator .panal .operation2 {
+  order: 15;
+}
+body.themeOne .calculator .panal .operation3, body.themeThree .calculator .panal .operation3, body.themeTwo .calculator .panal .operation3 {
+  order: 16;
+}
+body.themeOne .calculator .panal p, body.themeThree .calculator .panal p, body.themeTwo .calculator .panal p {
+  flex-basis: calc(25% - 20px);
+  cursor: pointer;
+}
+body.themeOne .calculator .panal p.num, body.themeThree .calculator .panal p.num, body.themeTwo .calculator .panal p.num, body.themeOne .calculator .panal .speacialopre p, body.themeThree .calculator .panal .speacialopre p, body.themeTwo .calculator .panal .speacialopre p, body.themeOne .calculator .panal p.del, body.themeThree .calculator .panal p.del, body.themeTwo .calculator .panal p.del, body.themeOne .calculator .panal .speacialopre p.rest, body.themeThree .calculator .panal .speacialopre p.rest, body.themeTwo .calculator .panal .speacialopre p.rest, body.themeOne .calculator .panal p.operation, body.themeThree .calculator .panal p.operation, body.themeTwo .calculator .panal p.operation {
+  height: 2.8125rem;
+  text-align: center;
+  color: #444e58;
+  font-weight: bold;
+  line-height: 3.125rem;
+  font-size: 2.1875rem;
+  border-radius: 0.625rem;
+  background-color: #eae3db;
+  box-shadow: 0 0.3125rem 0 #b3a296;
+  transition: 0.5s all;
+}
+body.themeOne .calculator .panal p.num.active, body.themeThree .calculator .panal p.num.active, body.themeTwo .calculator .panal p.num.active, body.themeOne .calculator .panal .speacialopre p.active, body.themeThree .calculator .panal .speacialopre p.active, body.themeTwo .calculator .panal .speacialopre p.active, body.themeOne .calculator .panal .speacialopre p.rest.active, body.themeThree .calculator .panal .speacialopre p.rest.active, body.themeTwo .calculator .panal .speacialopre p.rest.active, body.themeOne .calculator .panal .speacialopre p.equal.active, body.themeThree .calculator .panal .speacialopre p.equal.active, body.themeTwo .calculator .panal .speacialopre p.equal.active, body.themeOne .calculator .panal p.active.del, body.themeThree .calculator .panal p.active.del, body.themeTwo .calculator .panal p.active.del, body.themeOne .calculator .panal p.active.operation, body.themeThree .calculator .panal p.active.operation, body.themeTwo .calculator .panal p.active.operation {
+  transform: translateY(0.1875rem);
+  box-shadow: 0 0 0 white;
+}
+body.themeOne .calculator .panal p.num:hover, body.themeThree .calculator .panal p.num:hover, body.themeTwo .calculator .panal p.num:hover, body.themeOne .calculator .panal .speacialopre p:hover, body.themeThree .calculator .panal .speacialopre p:hover, body.themeTwo .calculator .panal .speacialopre p:hover, body.themeOne .calculator .panal p.del:hover, body.themeThree .calculator .panal p.del:hover, body.themeTwo .calculator .panal p.del:hover, body.themeOne .calculator .panal p.operation:hover, body.themeThree .calculator .panal p.operation:hover, body.themeTwo .calculator .panal p.operation:hover {
+  opacity: 0.8;
+}
+body.themeOne .calculator .panal p.del, body.themeThree .calculator .panal p.del, body.themeTwo .calculator .panal p.del, body.themeOne .calculator .panal .speacialopre p.rest, body.themeThree .calculator .panal .speacialopre p.rest, body.themeTwo .calculator .panal .speacialopre p.rest {
+  background-color: #647299;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #414e70;
+}
+body.themeOne .calculator .panal .speacialopre, body.themeThree .calculator .panal .speacialopre, body.themeTwo .calculator .panal .speacialopre {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  order: 17;
+}
+body.themeOne .calculator .panal .speacialopre p, body.themeThree .calculator .panal .speacialopre p, body.themeTwo .calculator .panal .speacialopre p {
+  flex-basis: calc(50% - 10px);
+}
+body.themeOne .calculator .panal .speacialopre p.equal, body.themeThree .calculator .panal .speacialopre p.equal, body.themeTwo .calculator .panal .speacialopre p.equal {
+  background-color: #d13f30;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #902315;
+}
+body.themeOne .calculator .panal .speacialopre p.rest, body.themeThree .calculator .panal .speacialopre p.rest, body.themeTwo .calculator .panal .speacialopre p.rest {
+  text-transform: uppercase;
+}
+body.themeTwo {
+  background-color: #e6e6e6;
+}
+body.themeTwo .calculator header h4 {
+  color: #000000;
+}
+body.themeTwo .calculator header .themes h6 {
+  color: #000000;
+}
+body.themeTwo .calculator header .themes .toggle .numbers span {
+  color: #000000;
+}
+body.themeTwo .calculator header .themes .toggle .change {
+  background-color: #d3cdcd;
+}
+body.themeTwo .calculator header .themes .toggle .change::before {
+  background-color: #ff8833;
+  left: 50%;
+}
+body.themeTwo .calculator .screen textarea {
+  background-color: #eeeeee;
+  color: #000000;
+}
+body.themeTwo .calculator .panal {
+  background-color: #d3cdcd;
+}
+body.themeTwo .calculator .panal p.num, body.themeTwo .calculator .panal p.operation, body.themeTwo .calculator .panal p.del, body.themeTwo .calculator .panal .speacialopre p, body.themeTwo .calculator .panal .speacialopre p.rest {
+  color: #000000;
+  background-color: #e5e4e0;
+  box-shadow: 0 0.3125rem 0 #a59d92;
+}
+body.themeTwo .calculator .panal p.del, body.themeTwo .calculator .panal .speacialopre p.rest {
+  background-color: #196167;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #0b4146;
+}
+body.themeTwo .calculator .panal .speacialopre p.equal {
+  background-color: #f86a04;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #873700;
+}
+
+body.themeThree {
+  background-color: #17062a;
+}
+body.themeThree .calculator header h4 {
+  color: #fce738;
+}
+body.themeThree .calculator header .themes h6 {
+  color: #fce738;
+}
+body.themeThree .calculator header .themes .toggle .numbers span {
+  color: #fce738;
+}
+body.themeThree .calculator header .themes .toggle .change {
+  background-color: #1f0736;
+}
+body.themeThree .calculator header .themes .toggle .change::before {
+  background-color: #01dbd5;
+  left: calc(100% - 0.4375rem);
+}
+body.themeThree .calculator .screen textarea {
+  background-color: #1e0836;
+  color: #fce738;
+}
+body.themeThree .calculator .panal {
+  background-color: #1e0836;
+}
+body.themeThree .calculator .panal p.num, body.themeThree .calculator .panal p.operation, body.themeThree .calculator .panal p.del, body.themeThree .calculator .panal .speacialopre p, body.themeThree .calculator .panal .speacialopre p.rest {
+  color: #fce738;
+  background-color: #331b4d;
+  box-shadow: 0 0.3125rem 0 #851f9d;
+}
+body.themeThree .calculator .panal p.del, body.themeThree .calculator .panal .speacialopre p.rest {
+  background-color: #56077c;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #bf15f4;
+}
+body.themeThree .calculator .panal .speacialopre p.equal {
+  background-color: #00decf;
+  color: white;
+  box-shadow: 0 0.3125rem 0 #6bfaf1;
+}/*# sourceMappingURL=style.css.map */

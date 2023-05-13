@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head 
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    // main css file
+    link(rel='stylesheet', href='css/style.css')
+    // font Google
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap')
+  body.themeOne
+    .calculator 
+      //- header of claculator
+      header 
+        h4  calc
+        .themes 
+          h6 THEME
+          .toggle 
+            .numbers 
+              -for(let i=1;i<4;i++)
+                span=i
+            div.change 
+      .screen 
+        textarea(readonly)
+      .panal  
+        -var operations = ['+','-','*','/']
+        -for(let i= 9 ; i >= 0;i--)
+          p(class='num' ,class=`num${i}`)= i
+        p.num.dot .
+        each i,index in operations
+          p(class=`operation${index}` class='operation')= i
+        p.del DEL
+        .speacialopre
+          p.equal =
+          p.rest reset
+    script(src='js/main.js')
+
+

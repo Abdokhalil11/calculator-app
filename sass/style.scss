@@ -1,0 +1,352 @@
+@use "./variable" as *;
+//mixins
+@mixin flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin points {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+// function
+
+@function rem($flex) {
+  @return ($flex/16) + rem;
+}
+
+* {
+  font-family: "League Spartan", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 0.5s;
+}
+
+body.themeOne {
+  background-color: $themeOneBack;
+  width: 100%;
+  height: 100vh;
+  @include flexcenter;
+  // header of claculation
+  .calculator {
+    width: rem(400);
+    header {
+      @include flexBetween;
+      h4 {
+        color: white;
+      }
+      .themes {
+        @include flexBetween;
+        h6 {
+          color: white;
+          margin-right: rem(15);
+        }
+        .toggle {
+          .numbers {
+            @include flexBetween;
+            margin-bottom: rem(5);
+            span {
+              display: block;
+              color: white;
+              font-size: rem(10);
+              &:not(:last-child) {
+                margin-right: rem(10);
+              }
+            }
+          }
+          .change {
+            width: 100%;
+            background-color: $themeOneToggle;
+            height: rem(15);
+            border-radius: rem(10);
+            position: relative;
+            cursor: pointer;
+            &::before {
+              content: "";
+              background-color: $themeOneToggleBefore;
+              width: rem(10);
+              height: rem(10);
+              border-radius: 100%;
+              @include center;
+              left: rem(7);
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+    }
+    .screen {
+      width: 100%;
+      margin: rem(20) 0;
+      height: rem(80);
+      textarea {
+        width: inherit;
+        height: inherit;
+        resize: none;
+        border-radius: rem(5);
+        background-color: $themeOneScreen;
+        border: none;
+        padding: 0 rem(10);
+        line-height: rem(80);
+        text-align: right;
+        font-size: rem(50);
+        white-space: nowrap;
+        color: white;
+        caret-color: white;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .panal {
+      width: 100%;
+      background-color: $themeOneCalc;
+      padding: rem(15);
+      @include flexBetween;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-radius: rem(5);
+      .num0 {
+        order: 14;
+      }
+      .num1 {
+        order: 9;
+      }
+      .num2 {
+        order: 10;
+      }
+      .num3 {
+        order: 11;
+      }
+      .num4 {
+        order: 5;
+      }
+      .num5 {
+        order: 6;
+      }
+      .num6 {
+        order: 7;
+      }
+      .num7 {
+        order: 1;
+      }
+      .num8 {
+        order: 2;
+      }
+      .num9 {
+        order: 3;
+      }
+      .del {
+        order: 4;
+      }
+      .dot {
+        order: 13;
+      }
+      .operation0 {
+        order: 8;
+      }
+      .operation1 {
+        order: 12;
+      }
+      .operation2 {
+        order: 15;
+      }
+      .operation3 {
+        order: 16;
+      }
+      p {
+        flex-basis: calc(25% - 20px);
+        cursor: pointer;
+        &.num {
+          height: rem(45);
+          text-align: center;
+          color: $themeOneFont;
+          font-weight: bold;
+          line-height: rem(50);
+          font-size: rem(35);
+          border-radius: rem(10);
+          background-color: $themeOneButton;
+          box-shadow: 0 rem(5) 0 $themeOneButtonShadow;
+          transition: 0.5s all;
+          &.active {
+            transform: translateY(rem(3));
+            box-shadow: 0 0 0 white;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        &.operation {
+          @extend .num;
+        }
+        &.del {
+          @extend .num;
+          background-color: $themeOneSpecialButton;
+          color: white;
+          box-shadow: 0 rem(5) 0 #414e70;
+        }
+      }
+      .speacialopre {
+        flex-basis: 100%;
+        @include flexBetween;
+        order: 17;
+        p {
+          @extend .num;
+          flex-basis: calc(50% - 10px);
+          &.equal {
+            background-color: $themeOneEqual;
+            color: white;
+            box-shadow: 0 rem(5) 0 #902315;
+            &.active {
+              @extend .active;
+            }
+          }
+          &.rest {
+            @extend .del;
+            text-transform: uppercase;
+            &.active {
+              @extend .active;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.themeTwo {
+  @extend .themeOne;
+  background-color: $themeTwoBack;
+  // header of claculation
+  .calculator {
+    header {
+      h4 {
+        color: $themeTwoFont;
+      }
+      .themes {
+        h6 {
+          color: $themeTwoFont;
+        }
+        .toggle {
+          .numbers {
+            span {
+              color: $themeTwoFont;
+            }
+          }
+          .change {
+            background-color: $themeTwoToggle;
+            &::before {
+              background-color: $themeTwoToggleBefore;
+              left: 50%;
+            }
+          }
+        }
+      }
+    }
+    .screen {
+      textarea {
+        background-color: $themeTwoScreen;
+        color: $themeTwoFont;
+      }
+    }
+    .panal {
+      background-color: $themeTwoCalc;
+      p {
+        &.num {
+          color: $themeTwoFont;
+          background-color: $themeTwoButton;
+          box-shadow: 0 rem(5) 0 $themeTwoButtonShadow;
+        }
+        &.del {
+          background-color: $themeTwoSpecialButton;
+          color: white;
+          box-shadow: 0 rem(5) 0 #0b4146;
+        }
+      }
+      .speacialopre {
+        p {
+          &.equal {
+            background-color: $themeTwoEqual;
+            color: white;
+            box-shadow: 0 rem(5) 0 #873700;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.themeThree {
+  @extend .themeOne;
+  background-color: $themeThreeBack;
+  // header of claculation
+  .calculator {
+    header {
+      h4 {
+        color: $themeThreeFont;
+      }
+      .themes {
+        h6 {
+          color: $themeThreeFont;
+        }
+        .toggle {
+          .numbers {
+            span {
+              color: $themeThreeFont;
+            }
+          }
+          .change {
+            background-color: $themeThreeToggle;
+            &::before {
+              background-color: $themeThreeToggleBefore;
+              left: calc(100% - rem(7));
+            }
+          }
+        }
+      }
+    }
+    .screen {
+      textarea {
+        background-color: $themeThreeScreen;
+        color: $themeThreeFont;
+      }
+    }
+    .panal {
+      background-color: $themeThreeCalc;
+      p {
+        &.num {
+          color: $themeThreeFont;
+          background-color: $themeThreeButton;
+          box-shadow: 0 rem(5) 0 $themeThreeButtonShadow;
+        }
+        &.del {
+          background-color: $themeThreeSpecialButton;
+          color: white;
+          box-shadow: 0 rem(5) 0 #bf15f4;
+        }
+      }
+      .speacialopre {
+        p {
+          &.equal {
+            background-color: $themeThreeEqual;
+            color: white;
+            box-shadow: 0 rem(5) 0 #6bfaf1;
+          }
+        }
+      }
+    }
+  }
+}
